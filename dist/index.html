@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/279da6745c.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="City">
+    <button>Search</button>
+    <div id='container'></div>
+
+</body>
+<script src="../jquery/dist/jquery.js"></script>
+<script src="../handlebars/dist/handlebars.js"></script>
+<script src="TempManager.js"></script>
+<script src="Renderer.js"></script>
+<script src="main.js"></script>
+<script id="city-template" type="text/x-handlebars-template">
+    {{#each this}}
+    <div class='city'>
+        <p class='name'>{{ name }}</p>
+        <p class='temp'>{{ temperature }} &#8451</p>
+        <p class ='conditions'>{{ conditions }}</p>
+        <img class='icon' src="http://openweathermap.org/img/wn/{{ conditionPic }}@2x.png" alt="">
+        
+            {{#if fromSearchFlag}}
+                <div class='addIcon'> 
+                    <i class="fas fa-plus-square fa-3x" style="color: lightskyblue;"></i>
+                </div>
+            {{else}}
+                <div class='removeIcon'>
+                    <i class="fas fa-minus-circle fa-3x"  style='color:lightcoral'></i>
+                </div>    
+            {{/if}}           
+         
+    </div>  
+    {{/each}}
+  </script>
+</html>
+

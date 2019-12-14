@@ -1,0 +1,65 @@
+body{
+    background-color: #8bbabb
+}
+.city{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows:min-content;
+    background-color: #6c7b95;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 3px 3px #464159;
+    grid-template-areas: 
+    "ar t i "
+    "ar n c ";
+    justify-items: center;
+    align-items: center;
+}
+
+.name{
+    grid-area: n;
+    font-size: x-large
+}
+
+.temp{
+    grid-area: t;
+    font-size: xx-large;
+}
+
+.conditions{
+    grid-area: c;
+    font-size: x-large
+}
+
+.icon{
+    grid-area: i;
+}
+
+.addIcon{
+    grid-area: ar;
+}
+
+.removeIcon{
+    grid-area: ar;
+}
+
+input{
+    background:#f9f6f7 ;
+    width: 60vw;
+    height: 5vw;
+    margin: 11px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+button{
+    margin: 1vw;
+    width: 20vw;
+    height: 10vw;
+    padding: 1.5vw;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
