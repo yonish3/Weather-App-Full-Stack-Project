@@ -1,7 +1,7 @@
-
+render = new Render 
 const loadPage = async function(){
     let data = await getDataFromDB()
-    renderData(data)
+    render.renderData(data)
 }
 
 const handleSearch = async function(){
@@ -9,7 +9,7 @@ const handleSearch = async function(){
     $('input').val("")
 
     await getCityData(cityInput)
-    renderData(cityData)
+    render.renderData(cityData)
 }
 
 loadPage()

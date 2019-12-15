@@ -1,3 +1,4 @@
+
 let cityData = []
 
 class City {
