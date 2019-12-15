@@ -10,13 +10,9 @@ class City {
     }
 }
 
-const getDataFromDB = function(){
-    return new Promise(resolve => {
-        resolve($.get(`/cities/`, function (cities) {
-            cityData = cities
-        })
-        )
-    })
+const getDataFromDB = async function(){
+    cityData = await $.get(`/cities/`)
+    return cityData
 }
 
 const getCityData = async function(cityName){

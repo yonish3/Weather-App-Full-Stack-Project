@@ -7,6 +7,7 @@ const loadPage = async function(){
 const handleSearch = async function(){
     let cityInput = $('input').val()
     $('input').val("")
+
     await getCityData(cityInput)
     renderData(cityData)
 }
