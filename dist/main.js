@@ -1,31 +1,21 @@
 render = new Render 
-const loadPage = async function(){
-    let data = await getDataFromDB()
-    render.renderData(data)
-}
+tempManager = new TempManager
 
-const handleSearch = async function(){
-    let cityInput = $('input').val()
-    $('input').val("")
-
-    await getCityData(cityInput)
-    render.renderData(cityData)
-}
-
-loadPage()
+render.loadPage()
 
 $('button').on('click', function () {
-    handleSearch()
+    let cityInput = $('input').val()
+    render.handleSearch(cityInput)
 })
 
 $('#container').on('click','.addIcon', function () { 
     let cityName= $(this).siblings('.name').text()
-    saveCity(cityName)
-    loadPage()
+    tempManager.saveCity(cityName)
+    render.loadPage()
 })
 
 $('#container').on('click','.removeIcon', function () { 
     let cityName= $(this).siblings('.name').text()
-    removeCity(cityName)
-    loadPage()
+    tempManager.removeCity(cityName)
+    render.loadPage()
 })

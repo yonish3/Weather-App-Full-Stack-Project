@@ -7,6 +7,17 @@ class Render{
         $('#container').empty().append(newHTML)
     }
 
+    loadPage = async function(){
+        let data = await tempManager.getDataFromDB()
+        render.renderData(data)
+        }
+
+    
+    handleSearch = async function(cityInput){
+        $('input').val("")
+        await tempManager.getCityData(cityInput)
+        render.renderData(tempManager.cityData)
+    }
 }
     
     
