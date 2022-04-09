@@ -13,7 +13,7 @@
     "handlebars": "^4.5.3",
     "jQuery": "^1.7.4",
     "jquery": "^3.4.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "mongoose": "^5.8.0",
     "request": "^2.88.0"
   },
